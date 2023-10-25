@@ -1,9 +1,9 @@
 <?php
 
-use App\Http\Controllers\TransactionController;
-use App\Http\Controllers\LandingController;
-use App\Models\Transaction;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LandingController;
+use App\Http\Controllers\TransactionController;
+use App\Transaction;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,4 +17,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', LandingController::class)->name('landing');
-Route::resource('transactions', TransactionsController::class);
+Route::get('/', LandingController::class);
+
+Route::resource('transactions', TransactionController::class);
