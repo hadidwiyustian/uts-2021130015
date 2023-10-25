@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\TransactionController;
+use App\Http\Controllers\LandingController;
+use App\Models\Transaction;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +16,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', LandingController::class)->name('landing');
+Route::resource('transactions', TransactionsController::class);
